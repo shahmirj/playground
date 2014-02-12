@@ -11,3 +11,6 @@
 *.lai
 *.la
 *.a
+
+programming-from-ground-up/bin
+programming-from-ground-up/lib
