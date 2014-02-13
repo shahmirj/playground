@@ -8,7 +8,7 @@ DIRECTORIES=$(BINDIR) $(LIBDIR)
 OBJECTS=$(addprefix src/, exit.o)
 
 # Programs which compile
-PROGRAMS=$(addprefix $(BINDIR)/, exit maxvalue minvalue)
+PROGRAMS=$(addprefix $(BINDIR)/, exit maxvalue maxvalue-length minvalue)
 
 # @target: all
 #
