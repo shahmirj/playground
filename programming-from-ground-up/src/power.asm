@@ -4,7 +4,7 @@
 .globl _start
 
 _start:
-    push $4	    # parameter 1 for pow
+    push $4	    ; parameter 1 for pow
     push $2	    # parameter 2 for pow
     call pow
     add $16, %rsp    # Move the stack pointer back
