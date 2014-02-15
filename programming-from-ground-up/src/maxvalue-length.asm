@@ -1,12 +1,12 @@
-; Calculate the max value of the data_items, using length
-; as the end of the list
-;
-; To run:
-;     make bin/maxvalue-length
-;     bin/maxvalue-length
-;     echo $?
-;
-; The value returned should be 234
+# Calculate the max value of the data_items, using length
+# as the end of the list
+#
+# To run:
+#     make bin/maxvalue-length
+#     bin/maxvalue-length
+#     echo $?
+#
+# The value returned should be 234
 
 .section .data
 data_items:

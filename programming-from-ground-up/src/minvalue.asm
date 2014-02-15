@@ -1,11 +1,11 @@
-; Calculate the min value of the data_items
-;
-; To run:
-;     make bin/minvalue
-;     bin/minvalue
-;     echo $?
-;
-; The value returned should be 2
+# Calculate the min value of the data_items
+#
+# To run:
+#     make bin/minvalue
+#     bin/minvalue
+#     echo $?
+#
+# The value returned should be 2
 
 .section .data
 data_items:
