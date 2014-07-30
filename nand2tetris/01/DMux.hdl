@@ -7,6 +7,12 @@
  * Demultiplexor.
  * {a,b} = {in,0} if sel==0
  *         {0,in} if sel==1
+ *
+ *
+ * A gate simplification 
+ *
+ * a = ~s * in
+ * b = s * in
  */
 
 
@@ -15,5 +21,8 @@ CHIP DMux {
     OUT a, b;
 
     PARTS:
-    // Put your code here:
+    Not(in=sel, out=notsel);
+
+    And(a=notsel, b=in, out=a);
+    And(a=sel, b=in, out=b);
 }
