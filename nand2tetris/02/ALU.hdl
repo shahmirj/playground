@@ -61,25 +61,23 @@ CHIP ALU {
     Mux16(a=oy, b=notoy, sel=ny, out=yval);
 
     // x+y and x&y
-    Or16(a=xval, b=yval, out=outor);
+    Add16(a=xval, b=yval, out=outadd);
     And16(a=xval, b=yval, out=outand);
 
     // if (f) then x+y else x&y
-    Mux16(a=outor, b=outand, sel=f, out=outf);
+    Mux16(a=outand, b=outadd, sel=f, out=outf);
 
     // if (no) then f(x, y) else !f(x, y)
     Not16(in=outf, out=notoutf);
     Mux16(a=outf, b=notoutf, sel=no, out=muxout);
-    Or16(a=muxout, b=false, out=out);
+    Or16(a=muxout, b=false, out=out, out[0..7]=halfleft, out[8..15]=halfright, out[15]=isneg);
 
     // If (out=0) then zr=true
-    //Or8Way(in=muxout[0..7], out=outor8a[0..7]);
-    //Or8Way(in=muxout[8..15], out=outor8b[8..15]);
-    //Or(a=outor8a, b=outor8b, out=orzr);
-    //Not(in=orzr, out=zr);
-
-//    out=muxout;
+    Or8Way(in=halfleft, out=outor8a);
+    Or8Way(in=halfright, out=outor8b);
+    Or(a=outor8a, b=outor8b, out=orzr);
+    Not(in=orzr, out=zr);
 
     // if (out<0) then zr=true
-    //And(a=muxout[15], b=true, out=ng);
+    And(a=isneg, b=true, out=ng);
 }
