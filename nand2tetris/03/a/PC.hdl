@@ -15,9 +15,7 @@ CHIP PC {
     IN in[16],load,inc,reset;
     OUT out[16];
 
-
     PARTS:
-
     Mux(a=inc, b=false, sel=load, out=incorload);
 
     Mux16(a=in, b=plusone, sel=incorload, out=w1);
