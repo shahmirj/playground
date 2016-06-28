@@ -18,3 +18,5 @@ programming-from-ground-up/lib
 introduction-to-algorithms/bin
 introduction-to-algorithms/lib
 
+# IDE
+.idea
